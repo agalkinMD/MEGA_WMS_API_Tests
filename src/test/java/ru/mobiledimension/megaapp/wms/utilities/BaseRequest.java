@@ -45,7 +45,7 @@ public class BaseRequest {
         preemptiveBasicAuthScheme.setUserName("Administrator");
         preemptiveBasicAuthScheme.setPassword("123");
 
-        String crmID = "2307a204-3292-e711-80cf-00155dfa2a2f";
+        String crmID = "2507a204-3292-e711-80cf-00155dfa2a2f";
         String mallID = "17";
 
         RestAssured.baseURI = "https://ikea.corp.rarus-cloud.ru";
