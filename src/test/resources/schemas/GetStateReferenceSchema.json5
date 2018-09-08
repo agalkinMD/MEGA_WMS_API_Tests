@@ -1,0 +1,39 @@
+{
+    "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStateReference",
+    "type": "array",
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "items": {
+        "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStateReference/items",
+        "type": "object",
+        "properties": {
+            "StateID": {
+                "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStateReference/items/properties/StateID",
+                "type": "integer",
+                "title": "The StateID Schema",
+                "default": 0,
+                "examples": [
+                    1
+                ]
+            },
+            "StateName": {
+                "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStateReference/items/properties/StateName",
+                "type": "string",
+                "title": "The StateName Schema",
+                "default": "",
+                "examples": [
+                    "Принята"
+                ]
+            },
+            "StateType": {
+                "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStateReference/items/properties/StateType",
+                "type": "integer",
+                "title": "The StateType Schema",
+                "default": 0,
+                "examples": [
+                    1
+                ]
+            }
+        }
+    }
+}

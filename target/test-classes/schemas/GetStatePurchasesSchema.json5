@@ -1,0 +1,120 @@
+{
+    "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStatePurchases",
+    "type": "array",
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "items": {
+        "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStatePurchases/items",
+        "type": "object",
+        "properties": {
+            "Barcode": {
+                "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStatePurchases/items/properties/Barcode",
+                "type": "string",
+                "title": "The Barcode Schema",
+                "default": "",
+                "examples": [
+                    "172712300"
+                ]
+            },
+            "MallID": {
+                "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStatePurchases/items/properties/MallID",
+                "type": "string",
+                "title": "The MallID Schema",
+                "default": "",
+                "examples": [
+                    "17"
+                ]
+            },
+            "PlaceID": {
+                "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStatePurchases/items/properties/PlaceID",
+                "type": "string",
+                "title": "The PlaceID Schema",
+                "default": "",
+                "examples": [
+                    "2262"
+                ]
+            },
+            "StateID": {
+                "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStatePurchases/items/properties/StateID",
+                "type": "integer",
+                "title": "The StateID Schema",
+                "default": 0,
+                "examples": [
+                    1
+                ]
+            },
+            "Oversize": {
+                "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStatePurchases/items/properties/Oversize",
+                "type": "integer",
+                "title": "The Oversize Schema",
+                "default": 0,
+                "examples": [
+                    0
+                ]
+            },
+            "AdmissionDate": {
+                "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStatePurchases/items/properties/AdmissionDate",
+                "type": "string",
+                "title": "The AdmissionDate Schema",
+                "default": "",
+                "examples": [
+                    "2018-06-01T00:00:00"
+                ]
+            },
+            "StateDate": {
+                "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStatePurchases/items/properties/StateDate",
+                "type": "string",
+                "title": "The StateDate Schema",
+                "default": "",
+                "examples": [
+                    "2018-06-01T00:00:00"
+                ]
+            },
+            "CellType": {
+                "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStatePurchases/items/properties/CellType",
+                "type": "integer",
+                "title": "The CellType Schema",
+                "default": 1,
+                "examples": [
+                    1
+                ]
+            },
+            "CellID": {
+                "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStatePurchases/items/properties/CellID",
+                "type": "string",
+                "title": "The CellID Schema",
+                "default": "",
+                "examples": [
+                    "8322"
+                ]
+            },
+            "LicensePlate": {
+                "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStatePurchases/items/properties/LicensePlate",
+                "type": ["string", "null"],
+                "title": "The LicensePlate Schema",
+                "default": null,
+                "examples": [
+                    "К579СА150"
+                ]
+            },
+            "DeliveryTimer": {
+                "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStatePurchases/items/properties/DeliveryTimer",
+                "type": "integer",
+                "title": "The DeliveryTimer Schema",
+                "default": 0,
+                "examples": [
+                    0
+                ]
+            },
+            "DeliverySLA": {
+                  "$id": "https://ikea.corp.rarus-cloud.ru/base_2/hs/Mobile/v1/GetStatePurchases/items/properties/DeliverySLA",
+                "type": "integer",
+                "title": "The DeliverySLA Schema",
+                "default": 0,
+                "examples": [
+                    600
+                ]
+            }
+        }
+    }
+}
