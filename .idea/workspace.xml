@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76ef1678-5fe2-4c9b-90b7-5448010f7b39" name="Default Changelist" comment="" />
+    <list default="true" id="76ef1678-5fe2-4c9b-90b7-5448010f7b39" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -113,7 +115,7 @@
           <entry key="java" value="1642" />
           <entry key="json5" value="39" />
           <entry key="txt" value="3" />
-          <entry key="xml" value="27" />
+          <entry key="xml" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -122,7 +124,7 @@
           <entry key="JAVA" value="1642" />
           <entry key="JSON5" value="39" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="XML" value="27" />
+          <entry key="XML" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.mvc.usages" />
@@ -133,7 +135,7 @@
           <entry key="dummy" value="57" />
           <entry key="java" value="19011" />
           <entry key="json5" value="52" />
-          <entry key="xml" value="252" />
+          <entry key="xml" value="254" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -141,7 +143,7 @@
           <entry key="JAVA" value="19011" />
           <entry key="JSON5" value="52" />
           <entry key="PLAIN_TEXT" value="57" />
-          <entry key="XML" value="252" />
+          <entry key="XML" value="254" />
         </counts>
       </usages-collector>
     </session>
@@ -149,13 +151,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ru/mobiledimension/megaapp/wms/utilities/BaseRequest.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="332">
+              <caret line="70" column="19" selection-start-line="70" selection-start-column="19" selection-end-line="70" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -183,6 +182,9 @@
       <find>arra</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -208,7 +210,6 @@
         <option value="$PROJECT_DIR$/src/test/resources/GetStatePurchasesSchema.json5" />
         <option value="$PROJECT_DIR$/src/test/java/ru/mobiledimension/megaapp/wms/models/GetStatePurchases/GetStatePurchasesResponse.java" />
         <option value="$PROJECT_DIR$/src/test/resources/RegisterShippingSchema.json5" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/ru/mobiledimension/megaapp/wms/RegisterShippingMEGAAutoDeliveryTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/mobiledimension/megaapp/wms/utilities/FileWorker.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/mobiledimension/megaapp/wms/GetStateReferenceTest.java" />
@@ -237,6 +238,7 @@
         <option value="$PROJECT_DIR$/src/test/java/ru/mobiledimension/megaapp/wms/tests/RegisterShipping/RegisterShippingParkingDeliveryTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/mobiledimension/megaapp/wms/tests/RegisterShipping/RegisterShippingPointDeliveryTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/mobiledimension/megaapp/wms/utilities/BaseRequest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -295,6 +297,7 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <autoscrollFromSource ProjectPane="true" />
@@ -431,7 +434,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536422843857" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536423543860" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSON&#10;JSON5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -596,7 +599,7 @@
       <workItem from="1536136845167" duration="806000" />
       <workItem from="1536227266320" duration="228000" />
       <workItem from="1536316997684" duration="2480000" />
-      <workItem from="1536410107033" duration="10149000" />
+      <workItem from="1536410107033" duration="10547000" />
     </task>
     <servers />
   </component>
@@ -633,13 +636,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="260730000" />
+    <option name="totallyTimeSpent" value="261128000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2881563" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2881563" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -648,7 +651,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.60714287" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.60714287" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.45816326" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -814,13 +817,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/PurchasesList_verified.txt" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/src.zip!/java/nio/file/Files.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -944,13 +940,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/barcodes/BarcodeList_actual.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/testNG.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="101" selection-start-line="10" selection-start-column="101" selection-end-line="10" selection-end-column="101" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/mobiledimension/megaapp/wms/utilities/FileUtils.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1092,6 +1081,20 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/testNG.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="101" selection-start-line="10" selection-start-column="101" selection-end-line="10" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="70" column="19" selection-start-line="70" selection-start-column="19" selection-end-line="70" selection-end-column="19" />
         </state>
       </provider>
     </entry>
