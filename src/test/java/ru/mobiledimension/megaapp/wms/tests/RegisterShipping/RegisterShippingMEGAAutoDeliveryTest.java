@@ -49,14 +49,14 @@ public class RegisterShippingMEGAAutoDeliveryTest extends BaseRequest {
             e.printStackTrace();
         }
 
-        writeBarcodeList(responseBody.getPurchases(), getActualBarcodeListFile());
-
         try {
-            Assert.assertTrue(isEqualContentInActualAndVerifiedFiles(getActualBarcodeListFile(), getVerifiedBarcodeListFile()),
-                    "Content in API response and \"BarcodeList_verified\" file doesn't match!");
+            writeBarcodeList(responseBody.getPurchases(), getActualBarcodeListFile());
         } catch (Exception e) {
-            Assert.fail("Что-то пошло не так при регистрации доставки");
+            Assert.fail("Что-то пошло не так при оформлении доставки");
         }
+
+        Assert.assertTrue(isEqualContentInActualAndVerifiedFiles(getActualBarcodeListFile(), getVerifiedBarcodeListFile()),
+                "Content in API response and \"BarcodeList_verified\" file doesn't match!");
     }
 
     @Test(description = "Валидация JSON-схемы")
