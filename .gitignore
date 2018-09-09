@@ -2,3 +2,5 @@
 target/
 allure-results/
 src/test/resources/barcodes/BarcodeList_verified.txt
+src/test/resources/barcodes/BarcodeList_verified.txt
+src/test/resources/barcodes/BarcodeList_unregistered.txt
