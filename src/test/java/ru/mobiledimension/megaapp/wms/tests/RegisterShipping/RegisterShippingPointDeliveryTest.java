@@ -29,7 +29,8 @@ public class RegisterShippingPointDeliveryTest extends BaseRequest {
     RegisterShippingResponse responseBody;
 
 //    TODO: избавиться от duplicated-кода в @BeforeClass
-    @BeforeClass(description = "Выполнение запроса. Получение ответа. JSON parsing. Запись списка кодов покупок в файл и его валидация")
+    @BeforeClass(description = "Выполнение запроса. Получение ответа. JSON parsing. Запись списка кодов покупок в файл и его валидация",
+    groups = "BeforeClass")
     public void getResponse() {
         response =
             given()
@@ -57,7 +58,7 @@ public class RegisterShippingPointDeliveryTest extends BaseRequest {
                 "Content in API response and \"BarcodeList_verified\" file doesn't match!");
     }
 
-    @Test(description = "Валидация JSON-схемы")
+    @Test(description = "Валидация JSON-схемы", dependsOnGroups = {"BeforeClass"})
     @Description("Валидация JSON-схемы на соответствие названиям полей и их типам")
     @Severity(SeverityLevel.BLOCKER)
     public void RegisterShippingPointDelivery_validateJSONSchema() {
@@ -66,7 +67,7 @@ public class RegisterShippingPointDeliveryTest extends BaseRequest {
                 .body(matchesJsonSchemaInClasspath("schemas/RegisterShippingSchema.json5"));
     }
 
-    @Test(description = "Валидация списка кодов покупок")
+    @Test(description = "Валидация списка кодов покупок", dependsOnGroups = "BeforeClass")
     @Description("Валидация соответствия списка кодов покупок, полученных в ответе API, со списком, сохраненным в файле \"BarcodeList_verified\"")
     @Severity(SeverityLevel.BLOCKER)
     public void RegisterShippingPointDelivery_validateBarcodeList() {
@@ -80,7 +81,7 @@ public class RegisterShippingPointDeliveryTest extends BaseRequest {
         }
     }
 
-    @Test(description = "Валидация успешного оформления доставки")
+    @Test(description = "Валидация успешного оформления доставки", dependsOnGroups = "BeforeClass")
     @Description("Валидация успешного оформления доставки путем анализа полей \"Error\", \"ErrorID\" и \"ErrorText\"")
     @Severity(SeverityLevel.NORMAL)
     public void RegisterShippingPointDelivery_validateSuccessfulShippingRegistration() {
@@ -90,7 +91,7 @@ public class RegisterShippingPointDeliveryTest extends BaseRequest {
     }
 
 //    TODO: подумать над оптимизацией проверки licensePlate
-    @Test(description = "Валидация содержимого полей \"CelType\", \"CellID\" и \"LicensePlate\"")
+    @Test(description = "Валидация содержимого полей \"CelType\", \"CellID\" и \"LicensePlate\"", dependsOnGroups = "BeforeClass")
     @Description("Валидация содержимого полей \"CelType\", \"CellID\" и \"LicensePlate\" путем сравнения значений полей в запросе " +
             "со значениями, полученными в ответе API")
     @Severity(SeverityLevel.NORMAL)
@@ -104,7 +105,7 @@ public class RegisterShippingPointDeliveryTest extends BaseRequest {
         }
     }
 
-    @Test(description = "Валидация содержимого полей \"DeliveryTimer\" и \"DeliverySLA\"")
+    @Test(description = "Валидация содержимого полей \"DeliveryTimer\" и \"DeliverySLA\"", dependsOnGroups = "BeforeClass")
     @Description("Валидация содержимого полей \"DeliveryTimer\" и \"DeliverySLA\" путем проверки \"DeliverySLA != 0\" и " +
             "\"0 < DeliveryTimer <= DeliverySLA\"")
     @Severity(SeverityLevel.NORMAL)
