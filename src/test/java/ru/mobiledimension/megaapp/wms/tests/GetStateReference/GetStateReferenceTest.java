@@ -66,7 +66,7 @@ public class GetStateReferenceTest extends BaseRequest {
 
     @Test(description = "Валидация содержимого статусов")
     @Description("Валидация соответствия ID статуса соответствующему типу, а также его наименования")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.NORMAL)
     public void GetStateReference_validateStateIDsAndStateTypesMatching() {
         for (GetStateReferenceResponse stateReference : responseBody) {
             switch (stateReference.getStateID()) {
