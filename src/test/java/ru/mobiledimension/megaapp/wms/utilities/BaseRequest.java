@@ -39,7 +39,7 @@ public class BaseRequest {
 
     public static ObjectMapper objectMapper;
 
-    @BeforeSuite(description = "Ololo")
+    @BeforeSuite(description = "Подготовка спецификации запроса")
     public void setup() throws JsonProcessingException {
         PreemptiveBasicAuthScheme preemptiveBasicAuthScheme = new PreemptiveBasicAuthScheme();
         preemptiveBasicAuthScheme.setUserName("Administrator");
