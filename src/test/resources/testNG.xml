@@ -1,5 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="API" verbose="1">
+    <listeners>
+        <listener class-name="ru.mobiledimension.megaapp.wms.utilities.AllureListener"/>
+    </listeners>
 
     <test name="WMS">
         <classes>
