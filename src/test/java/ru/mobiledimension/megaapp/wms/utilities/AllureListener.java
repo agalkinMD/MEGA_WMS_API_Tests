@@ -11,7 +11,7 @@ public class AllureListener implements ISuiteListener {
     }
 
     public void onFinish(ISuite suite) {
-        System.out.println("After executing Suite:" + suite.getName());
+        System.out.println("After executing Suite: " + suite.getName());
         deleteAllureHistoryTrend();
     }
 
