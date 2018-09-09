@@ -49,8 +49,12 @@ public class RegisterShippingPointDeliveryTest extends BaseRequest {
 
         writeBarcodeList(responseBody.getPurchases(), getActualBarcodeListFile());
 
-        Assert.assertTrue(isEqualContentInActualAndVerifiedFiles(getActualBarcodeListFile(), getVerifiedBarcodeListFile()),
-                "Content in API response and \"BarcodeList_verified\" file doesn't match!");
+        try {
+            Assert.assertTrue(isEqualContentInActualAndVerifiedFiles(getActualBarcodeListFile(), getVerifiedBarcodeListFile()),
+                    "Content in API response and \"BarcodeList_verified\" file doesn't match!");
+        } catch (Exception e) {
+            Assert.fail("Что-то пошло не так при регистрации доставки");
+        }
     }
 
     @Test(description = "Валидация JSON-схемы")
