@@ -49,8 +49,12 @@ public class RegisterPurchaseTest extends BaseRequest {
             e.printStackTrace();
         }
 
-        Assert.assertTrue(getLastAddedBarcode().equals(registerPurchaseResponseBody.getPurchases().get(0).getBarcode()),
-                "Returned barcode doesn't match sent barcode!");
+        try {
+            Assert.assertTrue(getLastAddedBarcode().equals(registerPurchaseResponseBody.getPurchases().get(0).getBarcode()),
+                    "Returned barcode doesn't match sent barcode!");
+        } catch (NullPointerException e) {
+            Assert.fail("Что-то пошло не так при добавлении покупки");
+        }
     }
 
     @Test(description = "Валидация JSON-схемы")
