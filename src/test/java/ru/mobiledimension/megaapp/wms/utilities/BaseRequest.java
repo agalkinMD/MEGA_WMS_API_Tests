@@ -12,6 +12,8 @@ import io.restassured.specification.ResponseSpecification;
 
 import static org.hamcrest.Matchers.*;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import static ru.mobiledimension.megaapp.wms.utilities.FileUtils.*;
@@ -41,11 +43,13 @@ public class BaseRequest {
 
     @BeforeSuite(description = "Подготовка спецификации запроса")
     public void setup() throws JsonProcessingException {
+        addBarcodeListVerifiedFileIfNecessary();
+
         PreemptiveBasicAuthScheme preemptiveBasicAuthScheme = new PreemptiveBasicAuthScheme();
         preemptiveBasicAuthScheme.setUserName("Administrator");
         preemptiveBasicAuthScheme.setPassword("123");
 
-        String crmID = "2f07a204-3292-e711-80cf-00155dfa2a2f";
+        String crmID = "3107a204-3292-e711-80cf-00155dfa2a2f";
         String mallID = "17";
 
         RestAssured.baseURI = "https://ikea.corp.rarus-cloud.ru";
@@ -60,6 +64,7 @@ public class BaseRequest {
 
         objectMapper = new ObjectMapper();
 
+//        Валидные спецификации запросов для проверки Success Flow
         getStatePurchases_requestSpec = new RequestSpecBuilder()
             .addHeader("Content-Type", "application/json")
             .setBody(objectMapper.writeValueAsString(new GetStatePurchasesRequest.Builder()
@@ -156,6 +161,8 @@ public class BaseRequest {
                 .build()))
             .build();
 
+//        Невалидные спецификации запросов для проверки корректной обработки ошибок со стороны WMS
+
         responseSpec = new ResponseSpecBuilder()
             .expectStatusCode(200)
             .expectResponseTime(lessThan(30000L))
@@ -174,5 +181,20 @@ public class BaseRequest {
         barcodeList.add(readLastUnregisteredBarcode());
 
         return barcodeList;
+    }
+
+    private void addBarcodeListVerifiedFileIfNecessary() {
+        File file = new File("src/test/resources/barcodes/BarcodeList_verified.txt");
+        if (!file.exists()) {
+            try {
+                if (file.createNewFile())
+                    System.out.println("BarcodeList_verified.txt has been created successfully!");
+                else
+                    System.out.println("BarcodeList_verified.txt hasn't been created due to some problems.");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
