@@ -7,20 +7,25 @@ import io.restassured.authentication.PreemptiveBasicAuthScheme;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
+import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static ru.mobiledimension.megaapp.wms.utilities.FileUtils.*;
 
 import io.restassured.builder.ResponseSpecBuilder;
 import org.testng.annotations.BeforeSuite;
 import ru.mobiledimension.megaapp.wms.models.GetStatePurchases.*;
+import ru.mobiledimension.megaapp.wms.models.Purchase;
 import ru.mobiledimension.megaapp.wms.models.RegisterPurchase.RegisterPurchaseRequest;
 import ru.mobiledimension.megaapp.wms.models.RegisterShipping.RegisterShippingRequest;
 
@@ -43,13 +48,12 @@ public class BaseRequest {
 
     @BeforeSuite(description = "Подготовка спецификации запроса")
     public void setup() throws JsonProcessingException {
-        addBarcodeListVerifiedFileIfNecessary();
 
         PreemptiveBasicAuthScheme preemptiveBasicAuthScheme = new PreemptiveBasicAuthScheme();
         preemptiveBasicAuthScheme.setUserName("Administrator");
         preemptiveBasicAuthScheme.setPassword("123");
 
-        String crmID = "3107a204-3292-e711-80cf-00155dfa2a2f";
+        String crmID = "3307a204-3292-e711-80cf-00155dfa2a2f";
         String mallID = "17";
 
         RestAssured.baseURI = "https://ikea.corp.rarus-cloud.ru";
@@ -73,6 +77,8 @@ public class BaseRequest {
                 .withStateTypes(1, 2, 3, 5)
                 .build()))
             .build();
+
+        addBarcodeListVerifiedFileIfNecessary();
 
         registerPurchase_requestSpec = new RequestSpecBuilder()
             .addHeader("Content-Type", "application/json")
@@ -196,5 +202,30 @@ public class BaseRequest {
                 e.printStackTrace();
             }
         }
+
+//        То, что происходит далее, необходимо для того, чтобы в случае отсутствия Verified-файла от был после создания
+//        наполнен актуальным списком кодов покупок
+        Response response;
+        String responseToString;
+        ObjectMapper objectMapper;
+        List<Purchase> responseBody = new ArrayList<>();
+
+        response =
+                given()
+                        .spec(getStatePurchases_requestSpec)
+                        .when()
+                        .post(EndPoint.GET_STATE_PURCHASES);
+
+        objectMapper = new ObjectMapper();
+
+        responseToString = response.asString();
+
+        try {
+            responseBody = Arrays.asList(objectMapper.readValue(responseToString, Purchase[].class));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        writeBarcodeList(responseBody, getVerifiedBarcodeListFile());
     }
 }
